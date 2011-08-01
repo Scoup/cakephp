@@ -636,6 +636,9 @@ class SecurityComponent extends Object {
 		if (!empty($multi)) {
 			$fieldList += array_unique($multi);
 		}
+		if(is_array($locked)){
+			$locked = unserialize(str_rot13($locked[0]));
+		}
 
 		foreach ($fieldList as $i => $key) {
 			$isDisabled = false;
